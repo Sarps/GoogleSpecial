@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoogelSpecial</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="font-family:Montserrat;overflow:hidden;">
+    <div style="font-family:Montserrat;background-image:url(&quot;assets/img/code-abstract.jpg&quot;);">
+        <div class="header-blue" style="/*background-color:rgba(0,0,0,0.17);*/">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" 
+                style="background-color:rgba(255,255,255,0.09);">
+                <div class="container">
+                    <a class="navbar-brand" href="#">GoogleSpecial</a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse d-flex justify-content-end align-content-center"
+                        id="navcol-1">
+                        <a class="btn btn-light action-button" role="button" href="#">Sponsors</a>
+                        <a class="btn btn-light action-button" role="button" href="#"></a>
+                        <a class="btn btn-light action-button" role="button" href="#">About Us</a>
+                        <a class="btn btn-light action-button" role="button" href="#"></a>
+                        <a class="btn btn-light action-button" role="button" href="#">Contact US</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1 class="text-center">The Search Engine is here.</h1>
+                        <form action="http://www.google.com/search" id="form">
+                            <div class="form-group">
+                                <input class="form-control" name="q" type="search">
+                            </div>
+                            <div class="form-group d-flex justify-content-center">
+                                <select class="form-control" style="width:fit-content;margin-right:35px;" name="c">
+                                    <option value="" selected="">No Search Criteria</option>
+                                    <option value="intitle">Title</option>
+                                    <option value="intext">Text</option>
+                                    <option value="inurl">URL</option>
+                                    <option value="inanchor">Anchor</option>
+                                    <option value="filetype">File Type</option>
+                                    <option value="site">In Site</option>
+                                    <option value="related">Similar Sites</option>
+                                    <option value="info">Page Info</option>
+                                    <option value="define">Definition</option>
+                                </select>
+                                <button class="btn btn-light btn-lg action-button" type="submit">Search</button>
+                            </div>
+                        </form>
+                        <p style="position:absolute;bottom:20px;font-size:14px;letter-spacing:1px;">
+                            <strong><em>Disclaimer</em></strong>: 
+                            This search engine is provided "as is" without any special warranty. Use it at your own peril. The developers and/or owners hold no responsibilty whatsoever to any harm caused as a result of
+                            use of this search engine.
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                        <div class="iphone-mockup"><img src="assets/img/iphone.svg" class="device">
+                            <div class="screen" 
+                                style="background-image:url(&quot;assets/img/code-abstract.jpg&quot;);
+                                background-size:cover;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('form').onsubmit = function(e) {
+            e.preventDefault && e.preventDefault();
+            form = e.target;
+            filter = "";
+                if(e.target.c.value) filter = e.target.c.value+":";
+            query = "http://www.google.com/search?q="+filter+form.q.value;
+            document.location = query;
+
+        }
+    </script>
+</body>
+
+</html>
